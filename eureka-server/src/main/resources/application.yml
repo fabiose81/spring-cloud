@@ -1,0 +1,11 @@
+server:
+  port: 8081
+  enableSelfPreservation: true
+  
+eureka:
+  instance:
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 3600
+  client:
+    registerWithEureka: false
+    fetchRegistry: false

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
+
+<script src="js/index.js"></script>
+
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class="container">
+		<div class="panel panel-primary" th:fragment="indice-block"
+			id="indice-block">
+			<div class="panel-heading" id="stock-heading">Stock</div>
+			<div class="panel-body">
+				Symbol: <span th:text="${symbol}"></span> <br /> Name: <span
+					th:text="${name}"></span> <br /> Currency: <span
+					th:text="${currency}"></span> <br /> Stock Exchange: <span
+					th:text="${stockExchange}"></span>
+			</div>
+		</div>
+
+		<div class="panel panel-primary" th:fragment="currency-block"
+			id="currency-block">
+			<div class="panel-heading" id="currency-heading">Currency</div>
+			<div class="panel-body">
+				Source: <span th:text="${source}"></span><br /> Date Time: <span
+					th:text="${dateTime}"></span><br /> <br />
+				<div class="col-md-3">
+					<ul class="list-group">
+						<li class="list-group-item row" th:each="rate: ${rates}">
+							<div class="col-md-3">
+								<span th:text="${rate.name}"></span>
+							</div>
+							<div class="col-md-9">
+								<span th:text="${rate.value}"></span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
